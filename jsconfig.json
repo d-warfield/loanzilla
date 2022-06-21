@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "jsx": "preserve",
+    "paths": {
+      "constants": ["src/consts"],
+      "helpers": ["src/helpers"],
+      "assets": ["src/assets"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

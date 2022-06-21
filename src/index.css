@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  font-family: F-Regular
+}
+
+
+
+@font-face {
+  font-family: "F-Regular";
+  src: local("MyFont"), url(./assets/fonts/GraphikRegular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "F-Medium";
+  src: local("MyFont"),
+    url(./assets/fonts/GraphikMedium.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "F-Semi";
+  src: local("MyFont"),
+    url(./assets/fonts/GraphikSemibold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "F-Bold";
+  src: local("MyFont"),
+    url(./assets/fonts/GraphikBold.otf) format("opentype");
+}
+
+
+@font-face {
+  font-family: "F-Zilla";
+  src: local("MyFont"),
+    url(./assets/fonts/Zilla.ttf) format("truetype");
+}
+
+
+
+

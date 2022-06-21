@@ -1,0 +1,703 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "acceptIndex",
+				"type": "uint256"
+			}
+		],
+		"name": "borrowerAcceptOffer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "borrower",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "lender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes",
+				"name": "loanTerms",
+				"type": "bytes"
+			}
+		],
+		"name": "BorrowerAcceptOffer",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "borrower",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes",
+				"name": "termsData",
+				"type": "bytes"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes",
+				"name": "tokenData",
+				"type": "bytes"
+			}
+		],
+		"name": "BorrowerCreatedLoanRequest",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			}
+		],
+		"name": "borrowerWithdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "borrower",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "lender",
+				"type": "address"
+			}
+		],
+		"name": "BorrowerWithdrewCollateral",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			}
+		],
+		"name": "lenderAcceptOffer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "borrower",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "lender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bytes",
+				"name": "loanTerms",
+				"type": "bytes"
+			}
+		],
+		"name": "LenderAcceptOffer",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "lender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "principle",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "interestRate",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "duration",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "expires",
+				"type": "uint256"
+			}
+		],
+		"name": "LenderMadeLoanOffer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "principle",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "interestRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "duration",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "expires",
+				"type": "uint256"
+			}
+		],
+		"name": "lenderMakeOffer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			}
+		],
+		"name": "lenderWithdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "lender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "borrower",
+				"type": "address"
+			}
+		],
+		"name": "LenderWithdrewCollateral",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "borrower",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "lender",
+				"type": "address"
+			}
+		],
+		"name": "LoanRepaid",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes",
+				"name": "data",
+				"type": "bytes"
+			}
+		],
+		"name": "onERC721Received",
+		"outputs": [
+			{
+				"internalType": "bytes4",
+				"name": "",
+				"type": "bytes4"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "loanId",
+				"type": "uint256"
+			}
+		],
+		"name": "repayLoan",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "adjustedFee",
+				"type": "uint256"
+			}
+		],
+		"name": "setFee",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "togglePause",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdrawFees",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes",
+				"name": "_encoded",
+				"type": "bytes"
+			}
+		],
+		"name": "decode",
+		"outputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "currency",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "principle",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "interestRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "duration",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "contract IERC20",
+				"name": "currency",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "principle",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "interestRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "duration",
+				"type": "uint256"
+			}
+		],
+		"name": "encode",
+		"outputs": [
+			{
+				"internalType": "bytes",
+				"name": "",
+				"type": "bytes"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "fee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "feeBalances",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "tokenAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "count",
+				"type": "uint256"
+			}
+		],
+		"name": "generateLoanId",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "loanOffers",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "lender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "principle",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "interestRate",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "duration",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "expires",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "loans",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "borrower",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "lender",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "collateralInUse",
+				"type": "bool"
+			},
+			{
+				"components": [
+					{
+						"internalType": "contract IERC20",
+						"name": "currency",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "principle",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "interestRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maturity",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct LendZilla.LoanTerms",
+				"name": "loanTerms",
+				"type": "tuple"
+			},
+			{
+				"components": [
+					{
+						"internalType": "contract ERC721",
+						"name": "tokenAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"internalType": "struct LendZilla.LoanToken",
+				"name": "loanToken",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "paused",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

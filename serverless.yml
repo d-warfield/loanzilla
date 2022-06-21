@@ -1,0 +1,32 @@
+service: lendzilla-frontend
+
+plugins:
+  - fullstack-serverless
+
+custom:
+  fullstack:
+    domain: ${self:provider.environment.${self:provider.stage}.domain}
+    certificate: ${self:provider.environment.${self:provider.stage}.certificate}
+    bucketName: lendzilla-frontend
+    distributionFolder: build
+    indexDocument: index.html
+    errorDocument: index.html
+    clientCommand: GENERATE_SOURCEMAP=false npm run build --production
+    singlePageApp: true
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ${opt:region, 'us-east-1'}
+  stage: ${opt:stage, 'dev'}
+  profile: ${opt:profile, 'lendzilla-dev'}
+  environment:
+    dev:
+      certificate: arn:aws:acm:us-east-1:375757114152:certificate/f420e514-31b3-4e81-9483-5c4193dd6be7
+      domain:
+        - dev.lendzilla.co
+    prod:
+      certificate: arn:aws:acm:us-east-1:454285229991:certificate/26a03f50-7a6f-49bb-a345-733fbe54ac7e
+      domain:
+        - www.lendzilla.co
+        - lendzilla.co

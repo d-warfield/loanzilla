@@ -1,0 +1,24 @@
+
+
+* {
+  margin: 0
+}
+
+
+html,body{
+  overscroll-behavior-y: none;
+  background-color: white;
+
+  --p-color: #23C390;
+  --s-color: #bdeede;
+  --s-background-color: #F7F6F6;
+  --p-border: 1px solid #d7dce1;
+
+  
+  --p-border-radius: 8px;
+  
+  --s-text-color: #686C73;
+
+
+  --p-b-s: rgb(0 0 0 / 4%) 0px 10px 43px 2px;
+}
